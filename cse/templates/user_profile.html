@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{%block start%}
+{%csrf_token%}
+
+<form method = "post" enctype="multipart/form-data" class="col-6 mx-auto card p-3 shadow-lg ">
+    {% csrf_token %}
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name of the Student</label>
+    <input type="text" class="form-control" name="name" value = "{{user}}">
+    {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Enrollment Number</label>
+    <input type="text" class="form-control" name="enrollment" value="{{enrol}}">
+  </div>
+
+  <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Exam Roll Number</label>
+      <input type="Number" class="form-control" name="roll_no" value = "{{exam_roll}}">
+    </div>
+
+
+    <div class="form-group">
+        <label for="department">Semester:</label>
+        <select class="form-control" id="department" name="semester" value={{sem}}>
+          <option value="First">First</option>
+          <option value="Second">Second</option>
+          <option value="Third">Third</option>
+          <option value="Fourth">Fourth</option>
+          <option value="Fifth">Fifth</option>
+          <option value="Sixth">Sixth</option>
+          <option value="Seventh">Seventh</option>
+          <option value="Eigth">Eigth</option>
+
+          
+        </select>
+      </div>
+
+<div class="form-group">
+    <label for="department">Year in which Enrolled:</label>
+    <select class="form-control" id="year" name="year" value={{year_enroll}}>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+      <option value="2021">2021</option>
+      <option value="2020">2020</option>
+      <option value="2019">2019</option>
+      <option value="2018">2018</option>
+      <option value="2017">2017</option>
+      <option value="2016">2016</option>
+
+      
+    </select>
+      </div>
+
+
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Your Skills</label>
+    <input type="text" class="form-control" name="skill">
+    {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Your Skills</label>
+    <input type="file" id="imageInput" name="image" accept="image/*">
+
+    {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+  </div>
+      
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+
+
+
+
+{%endblock%}

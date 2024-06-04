@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{%block start%}
+<form method = "post" enctype="multipart/form-data" class="col-6 mx-auto card p-3 shadow-lg ">
+    {%csrf_token%}
+    <h1>Login Page</h1>
+<div class="mb-5" >
+    <label for="exampleInputEmail1" class="form-label">User Name</label>
+    <input type="text" name="username1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Add the User Name Here</div>
+  </div>
+  <div class="mb-4">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="Password" name="password1" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+{% endblock %}
